@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="PetsApp.View.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PetsApp.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+           <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.6*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <TextBlock TextWrapping="Wrap" Text="Ласкаво просимо до нашого віртуального притулку для тварин! Ми - команда відданих захисників тварин, які віддані місії забезпечити безпеку, захист і забезпечення найкращих умов для бездомних тварин. Наш проект - це багатовимірна програма, спрямована на допомогу безпритульним тваринам, які потребують домашнього затишку та ласки." FontSize="12" FontWeight="Bold" Margin="10"/>
+            <TextBlock TextWrapping="Wrap" Text="У нашому притулку ми надаємо широкий спектр послуг, включаючи: рятівництво та тимчасове притулкування, медичну допомогу та ветеринарний догляд, програми адопції та пошуку дому для тварин, а також освітні та інформаційні ініціативи щодо відповідальної догляду за тваринами." FontSize="12" FontWeight="Bold" Margin="10"/>
+            <TextBlock TextWrapping="Wrap" Text="Наша місія - створити сприятливе середовище для кожної тварини, що звернеться до нас у пошуках допомоги, незалежно від їхнього розміру, віку чи стану здоров'я. Ми віримо в справжню любов та розуміння до всіх створінь і працюємо наполегливо, щоб змінити їхні життя до кращого.
+
+Приєднуйтесь до нас у нашому зусиллі рятівництва та надання дому бездомним тваринам. Разом ми можемо зробити світ кращим для всіх його мешканців!&quot;" FontSize="12" FontWeight="Bold" Margin="10"/>
+
+        </StackPanel>
+        <Image Height="280" Grid.Column="1" Source="/Images/animal-shelter.jpg" Stretch="Fill" Margin="10"/>
+    </Grid>
+ 
+</UserControl>

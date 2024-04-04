@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="PetsApp.View.AllPetsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PetsApp.View"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <ListView Name="lv" ItemsSource="{Binding Pets}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <GroupBox
+                
+                 MaxWidth="270"
+                 Name="gb"
+                 Margin="16"
+                 
+                 Header="Card Group Box Secondary"
+                 Style="{StaticResource MaterialDesignCardGroupBox}"
+             >
+                        <b:Interaction.Triggers>
+                            <b:EventTrigger EventName="PreviewMouseLeftButtonDown">
+                                <b:InvokeCommandAction Command="{Binding ElementName=lv, Path=DataContext.GetByIdCommand}"  CommandParameter="{Binding Id}"/>
+                            </b:EventTrigger>
+                        </b:Interaction.Triggers>
+                        <GroupBox.HeaderTemplate>
+                            <DataTemplate>
+                                <StackPanel 
+                             Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                 Width="32"
+                                 Height="32"
+                                 VerticalAlignment="Center"
+                                 Kind="Dog" />
+                                    <TextBlock
+                                 Margin="8,0,0,0"
+                                 VerticalAlignment="Center"
+                                 Style="{StaticResource MaterialDesignSubtitle1TextBlock}"
+                                 Text="{Binding ElementName=gb, Path=DataContext.Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </GroupBox.HeaderTemplate>
+                        <Image>
+                            <Image.Source>
+                                <BitmapImage UriSource="{Binding Images[0].ImagePath}" />
+                            </Image.Source>
+                        </Image>
+                    </GroupBox>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>
